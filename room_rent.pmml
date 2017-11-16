@@ -1,0 +1,32 @@
+<PMML version="4.3" xmlns="http://www.dmg.org/PMML-4_3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.dmg.org/PMML-4_3 http://www.dmg.org/pmml/v4-3/pmml-4-3.xsd">
+ <Header copyright="Copyright (c) 2017 hadatuna" description="Linear Regression Model">
+  <Extension name="user" value="hadachi" extender="Rattle/PMML"/>
+  <Application name="Rattle/PMML" version="1.4"/>
+  <Timestamp>2017-11-16 03:58:38</Timestamp>
+ </Header>
+ <DataDictionary numberOfFields="15">
+  <DataField name="rent" optype="continuous" dataType="double"/>
+  <DataField name="walking_time" optype="continuous" dataType="double"/>
+  <DataField name="room_area" optype="continuous" dataType="double"/>
+  <DataField name="floor_number" optype="continuous" dataType="double"/>
+  <DataField name="automatic_lock" optype="continuous" dataType="double"/>
+ </DataDictionary>
+ <RegressionModel modelName="Linear_Regression_Model" functionName="regression" algorithmName="least squares">
+  <MiningSchema>
+   <MiningField name="rent" usageType="predicted"/>
+   <MiningField name="walking_time" usageType="active"/>
+   <MiningField name="room_area" usageType="active"/>
+   <MiningField name="floor_number" usageType="active"/>
+   <MiningField name="automatic_lock" usageType="active"/>
+  </MiningSchema>
+  <Output>
+   <OutputField name="Predicted_rent" feature="predictedValue"/>
+  </Output>
+  <RegressionTable intercept="34516.0447528898">
+   <NumericPredictor name="walking_time" exponent="1" coefficient="-1102.45849505358"/>
+   <NumericPredictor name="room_area" exponent="1" coefficient="2764.4714643131"/>
+   <NumericPredictor name="floor_number" exponent="1" coefficient="1442.11568912554"/>
+   <NumericPredictor name="automatic_lock" exponent="1" coefficient="9864.83119575036"/>
+  </RegressionTable>
+ </RegressionModel>
+</PMML>
